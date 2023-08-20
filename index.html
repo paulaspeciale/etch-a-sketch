@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="stylesheet" href="styles.css" />
+    <!-- minify -->
+    <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
+    <!-- latest -->
+    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+    <!-- core style only -->
+    <link href="https://unpkg.com/nes.css/css/nes-core.min.css" rel="stylesheet" />
+    <title>Etch a Sketch</title>
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="nes-container is-rounded is-dark full-center"><h1>Etch a Sketch</h1></div>
+      <div class="mode">Mode: Coloring</div>
+      <div class="content">
+        <div class="board nes-container is-rounded"></div>
+        <div class ="options-container">
+        <div class="nes-container with-title is-centered btn-container">
+          <p class="title">Options</p>
+          <button class="nes-btn" onclick="changeColor('black')">
+            Black
+          </button>
+          <button class="nes-btn is-primary" onclick="changeColor('white')">
+            Erasor
+          </button>
+          <div><label>Pick a Color:</label><input type ="color" id="chosenColor" > </div>
+          <button class="nes-btn is-warning" onclick="changeColor('random')">
+            Random
+          </button>
+          <button class ="nes-btn is-error" onclick="resetBoard()">Reset</button>
+        </div>
+        <div class="nes-container with-title is-centered options-container">
+          <p class="title">Board Settings</p>
+          <input
+          class="nes-input"
+          type="text"
+          value="16"
+          onchange="changeSize(this.value)"
+        />
+        <button class="nes-btn">Set Size</button>
+        </div>
+     
+        <div class="error">Input must be between 2 and 100</div>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
